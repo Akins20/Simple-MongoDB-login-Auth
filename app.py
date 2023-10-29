@@ -4,6 +4,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 app.secret_key = 'anythingsecret'  # Change this to a secret key
 
+
 # Define your MongoDB connection details
 client = MongoClient('mongodb://localhost:27017/')
 db = client['myDB']  # Replace with your database name
@@ -12,6 +13,7 @@ users_collection = db['users']
 @app.route('/')
 def index():
     return render_template('signup.html')
+
 
 @app.route('/signup', methods=['POST'])
 def signup():
